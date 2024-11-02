@@ -8,7 +8,7 @@ const Hero = () => {
     <section
       className="relative min-h-[800px] bg-cover bg-center"
       style={{
-        backgroundImage: `url('/src/assets/bgImg1.jpg')`,
+        backgroundImage: `url('src/assets/bgImg1.jpg')`,
       }}
       id="home"
     >
