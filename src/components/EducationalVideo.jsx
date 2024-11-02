@@ -66,7 +66,7 @@ const EducationalVideo = () => {
   return (
     <section
       className="relative min-h-[855px] bg-cover bg-center"
-      style={{ backgroundImage: `url('/src/assets/bgImg2.jpg')` }}
+      style={{ backgroundImage: `url('src/assets/bgImg2.jpg')` }}
       id="educational-videos"
     >
       <div className="container grid grid-cols-1 md:grid-cols-2 min-h-full relative">
