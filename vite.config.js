@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ['react-router-dom'], // Add react-router-dom as an external dependency
+      external: ['react-router-dom', 'emailjs-com'], // Add emailjs-com as an external dependency
     },
   },
 });
