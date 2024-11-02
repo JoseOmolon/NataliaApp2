@@ -7,11 +7,12 @@ import { motion } from "framer-motion";
 import NataliaLogo from "../assets/NataliaLogo.png";
 
 const NavbarMenu = [
-  { id: 1, title: "Home", link: "#home" },
+  { id: 1, title: "Home", link: "#home" }, // Adjusted to use hash links
   { id: 2, title: "Educational Web Apps", link: "#educational-web-apps" },
   { id: 3, title: "Educational Videos", link: "#educational-videos" },
-  { id: 4, title: "Contacts", link: "#contacts" }, // This will trigger the modal
+  { id: 4, title: "Contacts", link: "#contacts" }, // Will trigger the modal
 ];
+
 
 const Navbar = () => {
   const [open, setOpen] = useState(false); // State for the responsive menu
