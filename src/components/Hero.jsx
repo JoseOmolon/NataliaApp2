@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import babyPhoto2 from "../assets/babyPhoto2.png";
 import { FadeRight } from "../utility/animation";
-
+import bgImg1 from "../assets/bgImg1.jpg";
 
 const Hero = () => {
   return (
     <section
       className="relative min-h-[800px] bg-cover bg-center"
       style={{
-        backgroundImage: `url('src/assets/bgImg1.jpg')`,
+        backgroundImage: `url('${bgImg1}')`,
       }}
       id="home"
     >
