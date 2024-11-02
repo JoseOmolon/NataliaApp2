@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FadeRight, FadeUp } from "../utility/animation";
+import bgImg2 from "../assets/bgImg2.jpg";
 
 // Modal component
 const VideoModal = ({ isOpen, videoId, onClose }) => {
@@ -66,7 +67,7 @@ const EducationalVideo = () => {
   return (
     <section
       className="relative min-h-[855px] bg-cover bg-center"
-      style={{ backgroundImage: `url('src/assets/bgImg2.jpg')` }}
+      style={{ backgroundImage: `url(${bgImg2})` }}
       id="educational-videos"
     >
       <div className="container grid grid-cols-1 md:grid-cols-2 min-h-full relative">
