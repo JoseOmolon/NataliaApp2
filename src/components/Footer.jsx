@@ -1,4 +1,4 @@
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import NataliaLogo from "../assets/NataliaLogo.png";
 
@@ -23,9 +23,9 @@ const Footer = () => {
          
           {/* Social icons section */}
           <div className="text-3xl flex items-center gap-4 mt-6 text-gray-700">
-            <a href="https://www.instagram.com/jm_omolon/" target="new"><FaInstagram /></a>
-            <a href="https://www.facebook.com/bobchopgaming565" target="new" ><FaFacebookF /></a>
-            <a href="https://www.twitter.com/bobchopgaming565" target="new"><FaTwitter /></a>
+            <a href="https://github.com/JoseOmolon" target="new"><FaGithub /></a>
+            <a href="https://www.facebook.com/Jose.oWebSolutions/" target="new" ><FaFacebookF /></a>
+            <a href="https://www.linkedin.com/in/jose-omolon-77b985197/" target="new"><FaLinkedin /></a>
           </div>
         </motion.div>
         
