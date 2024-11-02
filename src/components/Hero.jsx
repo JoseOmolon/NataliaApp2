@@ -26,7 +26,7 @@ const Hero = () => {
                         initial="hidden"
                         animate="visible"
             className="text-base sm:text-lg md:text-xl lg:text-2xl font-happy font-semibold text-white">
-              I’m Natalia! Welcome to my fun educational website that daddy made! Click explore to discover exciting learning activities! Have a blast!
+              I’m Natalia! Welcome to my fun educational website that daddy made! click, explore and discover exciting learning activities! Have a blast!
             </motion.p>
           </div>
         </div>
