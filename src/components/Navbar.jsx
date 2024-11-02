@@ -10,9 +10,8 @@ const NavbarMenu = [
   { id: 1, title: "Home", link: "#home" }, // Adjusted to use hash links
   { id: 2, title: "Educational Web Apps", link: "#educational-web-apps" },
   { id: 3, title: "Educational Videos", link: "#educational-videos" },
-  { id: 4, title: "Contacts", link: "#contacts" }, // Will trigger the modal
+  { id: 4, title: "Contacts", action: "openModal" }, // Action to trigger the modal
 ];
-
 
 const Navbar = () => {
   const [open, setOpen] = useState(false); // State for the responsive menu
@@ -41,16 +40,16 @@ const Navbar = () => {
   return (
     <>
       <nav className="bg-primary">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
           className="container flex justify-between items-center py-4 md:pt-4"
         >
           <div className="text-2xl flex items-center gap-2 font-bold uppercase">
-            <img 
+            <img
               src={NataliaLogo}
-              alt="Logo" 
+              alt="Logo"
               className="w-27 h-20"
             />
           </div>
@@ -60,9 +59,9 @@ const Navbar = () => {
               {NavbarMenu.map((menu) => (
                 <li key={menu.id}>
                   <a
-                    href={menu.link}
+                    href={menu.action ? undefined : menu.link} // Set href only if not an action
                     className="inline-block py-1 px-3 hover:text-white hover:shadow-[0_3px_0_-1px_#ef4444] font-semibold"
-                    onClick={menu.id === 4 ? openModal : undefined} // Open modal for Contacts
+                    onClick={menu.action === "openModal" ? openModal : undefined} // Open modal for Contacts
                   >
                     {menu.title}
                   </a>

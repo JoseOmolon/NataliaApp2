@@ -1,22 +1,19 @@
-import { HashRouter, Route, Routes } from 'react-router-dom';
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 import EducationalApps from "./components/EducationalApps";
 import EducationalVideo from "./components/EducationalVideo";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <HashRouter>
+    <div className="App">
       <Navbar />
-      <div>
-        <Hero id="home" />
-        <EducationalApps id="educational-web-apps" />
-        <EducationalVideo id="educational-videos" />
-        {/* <Contacts id="contacts" /> Uncomment when ready */}
-      </div>
+      <Hero id="home" />
+      <EducationalApps id="educational-web-apps" />
+      <EducationalVideo id="educational-videos" />
+      {/* Add Contacts when ready */}
       <Footer />
-    </HashRouter>
+    </div>
   );
 }
 
