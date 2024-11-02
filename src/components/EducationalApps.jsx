@@ -1,7 +1,20 @@
 import { motion } from "framer-motion";
 import NataliaPhoto2 from '../assets/NataliaPhoto2.png';
+import NataliaColorApp from '../assets/NataliaColorApp.png';
+import NataliaQuizApp from '../assets/NataliaQuizApp.png';
+import NataliaMemoryGame from '../assets/MemoryGameApp.png';
+import NataliaCountryExplorer from '../assets/NataliaCountryExplorer.png';
 import webthumbnail from '../assets/webthumbnail.png';
 import { FadeLeft, FadeUp } from "../utility/animation";
+
+// Array of website data with images, titles, and links
+const websites = [
+  { img: NataliaColorApp, title: 'Natalia Color Webapp', link: 'https://joseomolon.github.io/NataliaColorChangerApp/' },
+  { img: NataliaQuizApp, title: 'Natalia Quiz Webapp', link: 'https://joseomolon.github.io/NataliaFunQuizAdventure/' },
+  { img: NataliaMemoryGame, title: 'Natalia Memory Game App', link: 'https://joseomolon.github.io/Natalia-Memory-App/' },
+  { img: NataliaCountryExplorer, title: 'Natalia Country Explorer App', link: 'https://joseomolon.github.io/NataliaCountryExplorer/' },
+  
+];
 
 // Floating Clouds Component
 const Clouds = () => {
@@ -53,7 +66,7 @@ const EducationalApps = () => {
             variants={FadeLeft(0.6)}
             initial="hidden"
             animate="visible"
-            className="text-gray-800 text-2xl font-happy font-semibold">
+            className="text-gray-800 text-base sm:text-lg md:text-xl lg:text-2xl font-happy font-semibold">
               "My dad created these educational websites for me. You can try it, I hope you enjoy!"
               -Natalia😀
             </motion.p>
@@ -67,7 +80,7 @@ const EducationalApps = () => {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }} 
-                className="text-5xl font-happy font-black text-white mt-9">
+                className="text-3xl md:text-4xl lg:text-5xl font-happy font-extrabold text-white mt-9">
                 Educational Websites
           </motion.h1>
           <br />
@@ -75,27 +88,26 @@ const EducationalApps = () => {
           <br />
           {/* Educational Website Cards */}
           <div className="grid grid-cols-2 gap-4">
-              {Array.from({ length: 4 }, (_, index) => (
+              {websites.map((website, index) => (
                 <div className="card" key={index}>
-                  <motion.img 
-                    src={webthumbnail} 
-                    alt={`Website ${index + 1}`} 
-                    variants={FadeUp(0.7)}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className="card-image" 
-                  />
-                  <motion.h2 
-                    variants={FadeUp(1.1)}
-                    initial="hidden"
-                    animate="visible"
-                    className="card-title">
-                    {index === 0 ? 'Title for Card 1' : 
-                    index === 1 ? 'Title for Card 2' : 
-                    index === 2 ? 'Title for Card 3' : 
-                    'Title for Card 4'}
-                  </motion.h2>
+                  <a href={website.link} target="_blank" rel="noopener noreferrer">
+                    <motion.img 
+                      src={website.img} 
+                      alt={`Website ${index + 1}`} 
+                      variants={FadeUp(0.7)}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      className="card-image" 
+                    />
+                    <motion.h2 
+                      variants={FadeUp(1.1)}
+                      initial="hidden"
+                      animate="visible"
+                      className="text-center text-purple-800 text-lg sm:text-xl md:text-2xl font-bold p-2">
+                      {website.title}
+                    </motion.h2>
+                  </a>
                 </div>
               ))}
           </div>

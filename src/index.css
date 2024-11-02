@@ -45,13 +45,6 @@ html {
   object-fit: cover;
 }
 
-.card-title {
-  padding: 10px;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-align: center;
-  color: #6a0dad; /* Custom card title color */
-}
 .cloud {
   background: rgb(138, 138, 238);
   border-radius: 100%;

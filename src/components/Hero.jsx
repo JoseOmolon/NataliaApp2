@@ -20,12 +20,12 @@ const Hero = () => {
             variants={FadeRight(0.6)}
             initial="hidden"
             animate="visible"
-            className="text-5xl font-happy font-extrabold text-white mt-9">Hi Friends!🙋‍♂️</motion.h1>
+            className="text-3xl md:text-4xl lg:text-5xl font-happy font-extrabold text-white mt-9">Hi Friends!🙋‍♂️</motion.h1>
             <motion.p 
                         variants={FadeRight(0.9)}
                         initial="hidden"
                         animate="visible"
-            className="text-2xl font-happy font-semibold text-white">
+            className="text-base sm:text-lg md:text-xl lg:text-2xl font-happy font-semibold text-white">
               I’m Natalia! Welcome to my fun educational website that daddy made! Click explore to discover exciting learning activities! Have a blast!
             </motion.p>
           </div>

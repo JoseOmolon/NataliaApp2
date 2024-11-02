@@ -6,29 +6,39 @@ import { FadeRight, FadeUp } from "../utility/animation";
 const VideoModal = ({ isOpen, videoId, onClose }) => {
   if (!isOpen) return null;
 
+  const handleOverlayClick = (e) => {
+    // Close the modal if the overlay is clicked
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
-      <div className="relative bg-white p-6 rounded-lg max-w-3xl mx-auto">
-        <button
-          className="absolute top-2 right-2 text-2xl text-black"
-          onClick={onClose}
-        >
-          &times; {/* Close button (X) */}
-        </button>
-        <div className="aspect-w-16 aspect-h-9">
-          <iframe
-            width="560"
-            height="315"
-            src={`https://www.youtube.com/embed/${videoId}`}
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
+    <div 
+    className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50"
+    onClick={handleOverlayClick} // Add click handler to the overlay
+  >
+    <div className="relative bg-white p-6 rounded-lg max-w-3xl mx-auto" onClick={(e) => e.stopPropagation()}>
+      <button
+        className="absolute top-2 right-2 text-2xl text-black"
+        onClick={onClose}
+      >
+        &times; {/* Close button (X) */}
+      </button>
+      <div className="aspect-w-16 aspect-h-9">
+        <iframe
+          width="560"
+          height="315"
+          src={`https://www.youtube.com/embed/${videoId}`}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 // Export EducationalVideo as default
@@ -67,7 +77,7 @@ const EducationalVideo = () => {
               variants={FadeRight(0.6)}
               initial="hidden"
               animate="visible"
-              className="text-4xl font-happy font-extrabold text-white mt-9"
+              className="text-3xl md:text-4xl lg:text-4xl font-happy font-extrabold text-white mt-9"
             >
               Natalia's Learning Video
             </motion.h1>
@@ -75,7 +85,7 @@ const EducationalVideo = () => {
               variants={FadeRight(0.9)}
               initial="hidden"
               animate="visible"
-              className="text-xl font-happy font-semibold text-white"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl font-happy font-semibold text-white"
             >
               I highly recommend Ms. Rachel's videos because they are
               specifically designed to support early childhood development,
@@ -109,7 +119,7 @@ const EducationalVideo = () => {
                   variants={FadeUp(1.1)}
                   initial="hidden"
                   animate="visible"
-                  className="card-title"
+                  className="text-center text-purple-800 text-lg sm:text-xl md:text-2xl font-bold p-2"
                 >
                   {video.title}
                 </motion.h2>
@@ -127,3 +137,5 @@ const EducationalVideo = () => {
 
 // Make sure to export it as default
 export default EducationalVideo;
+
+
