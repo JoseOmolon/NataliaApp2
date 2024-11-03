@@ -19,31 +19,32 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true); // Set loading to true
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  setLoading(true); // Set loading to true
 
-    // Create a new object to send to EmailJS
-    const emailParams = {
-      to_name: 'Web Admin',
-      from_name: formData.name,
-      message: formData.message,
-    };
-
-    emailjs.send('service_3183b2o', 'template_w1qfhtz', emailParams, 'LSHBDTbjWnPjd4OXA')
-      .then((response) => {
-        console.log('SUCCESS!', response.status, response.text);
-        setSuccess(true); // Set success state
-        setFormData({ name: '', email: '', message: '' }); // Reset form
-      })
-      .catch((error) => {
-        console.error('FAILED...', error);
-        setError('Failed to send the message. Please try again.'); // Set error message
-      })
-      .finally(() => {
-        setLoading(false); // Reset loading state
-      });
+  // Create a new object to send to EmailJS
+  const emailParams = {
+    to_name: 'Web Admin',
+    from_name: formData.name,
+    reply_to: formData.email, // Capture email here
+    message: formData.message,
   };
+
+  emailjs.send('service_3183b2o', 'template_w1qfhtz', emailParams, 'LSHBDTbjWnPjd4OXA')
+    .then((response) => {
+      console.log('SUCCESS!', response.status, response.text);
+      setSuccess(true); // Set success state
+      setFormData({ name: '', email: '', message: '' }); // Reset form
+    })
+    .catch((error) => {
+      console.error('FAILED...', error);
+      setError('Failed to send the message. Please try again.'); // Set error message
+    })
+    .finally(() => {
+      setLoading(false); // Reset loading state
+    });
+};
 
   return (
     <div className="bg-[#ADD8E6] p-4 rounded-lg shadow-md">
