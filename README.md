@@ -10,7 +10,7 @@ Welcome to the **Natalia Web App**, a project I built with passion and purpose! 
 - **Educational Videos**: Learn through video content that's easily accessible within the app.
 - **Contact Modal**: Allows users to easily get in touch via a contact modal form, triggered through the floating envelope icon.
 
-## Tech Stack 1
+## Tech Stack 
 
 This project is built using the following tools:
 
