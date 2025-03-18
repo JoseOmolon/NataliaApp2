@@ -2,7 +2,7 @@
 
 Welcome to the **Natalia Web App**, a project I built with passion and purpose! This app is designed to be a clean, interactive, and educational platform that offers both educational web apps and video resources. The goal is to create a user-friendly and visually appealing experience for anyone interested in expanding their learning.
 
-## Features 123
+## Features 12
 
 - **Hero Section**: Welcomes users with a clean and engaging intro.
 - **Navbar**: Smooth navigation across the app's sections with a modern and responsive menu.
