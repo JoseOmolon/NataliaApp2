@@ -12,7 +12,7 @@ Welcome to the **Natalia Web App**, a project I built with passion and purpose! 
 - **Contact Modal**: Allows users to easily get in touch via a contact modal form, triggered through the floating envelope icon.
 
 ## Tech Stack 
-  123
+  12
 This project is built using the following tools:
 
 - **React**: The core of the app, creating a dynamic and responsive UI.
